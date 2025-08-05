@@ -1,29 +1,72 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import HomeIcon from "@assets/images/home.svg";
+import { useFonts } from "expo-font";
+import { SplashScreen, Tabs } from "expo-router";
+import { useEffect } from "react";
+import "./globals.css";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+function RootLayout() {
+  const [fontsLoaded] = useFonts({
+    StyreneBold: require("../assets/fonts/StyreneAWeb-Bold.ttf"),
+    StyreneMedium: require("../assets/fonts/StyreneAWeb-Medium.ttf"),
+    StyreneRegular: require("../assets/fonts/StyreneAWeb-Regular.ttf"),
   });
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
+  useEffect(() => {
+    if (fontsLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
     return null;
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Tabs>
+      <Tabs.Screen
+        name="index"
+        options={{
+          tabBarShowLabel: false,
+          tabBarStyle: {
+            height: 83,
+            borderTopWidth: 0,
+            elevation: 0,
+            shadowOpacity: 0,
+            paddingTop: 8,
+          },
+
+          headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <HomeIcon
+              width={27.5}
+              height={28.6}
+              fill={focused ? "#ff0000ff" : "#ffffff"}
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="spend/index"
+        options={{
+          tabBarShowLabel: false,
+          tabBarStyle: {
+            height: 83,
+            borderTopWidth: 0,
+            elevation: 0,
+            shadowOpacity: 0,
+          },
+
+          headerShown: false,
+        }}
+      />
+    </Tabs>
   );
 }
+
+export default RootLayout;
+
+//npx expo start --no-dev --minify
+//npx expo prebuild --clean

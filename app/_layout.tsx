@@ -24,19 +24,21 @@ function RootLayout() {
   }
 
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          height: 83,
+          borderTopWidth: 0,
+          elevation: 0,
+          shadowOpacity: 0,
+          paddingTop: 12,
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          tabBarShowLabel: false,
-          tabBarStyle: {
-            height: 83,
-            borderTopWidth: 0,
-            elevation: 0,
-            shadowOpacity: 0,
-            paddingTop: 12,
-          },
-
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <HomeIcon
@@ -51,14 +53,6 @@ function RootLayout() {
       <Tabs.Screen
         name="spend/index"
         options={{
-          tabBarShowLabel: false,
-          tabBarStyle: {
-            height: 83,
-            borderTopWidth: 0,
-            elevation: 0,
-            shadowOpacity: 0,
-          },
-
           headerShown: false,
         }}
       />

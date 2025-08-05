@@ -74,7 +74,7 @@ export default function Pie({
             fontFamily="StyreneRegular"
             transform={`scale(1 1) translate(0 0)`}
           >
-            {`${fourth}%`}
+            {`${7}%`}
           </SvgText>
 
           <Circle
@@ -108,7 +108,7 @@ export default function Pie({
             fontFamily="StyreneRegular"
             transform={`scale(1 1) translate(0 0)`}
           >
-            {`${third}%`}
+            {`${13}%`}
           </SvgText>
 
           <Circle
@@ -142,7 +142,7 @@ export default function Pie({
             fontFamily="StyreneRegular"
             transform={`scale(1 1) translate(0 0)`}
           >
-            {`${secondary}%`}
+            {`${24}%`}
           </SvgText>
 
           <Circle
@@ -176,7 +176,7 @@ export default function Pie({
             fontFamily="StyreneRegular"
             transform={`scale(1 1) translate(0 0)`}
           >
-            {`${percentage}%`}
+            {`${56}%`}
           </SvgText>
         </Svg>
       </View>

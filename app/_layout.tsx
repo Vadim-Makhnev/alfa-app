@@ -1,4 +1,5 @@
 import HomeIcon from "@assets/images/home.svg";
+import ChatIcon from "@assets/images/message.svg";
 import { useFonts } from "expo-font";
 import { SplashScreen, Tabs } from "expo-router";
 import { useEffect } from "react";
@@ -42,6 +43,20 @@ function RootLayout() {
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <HomeIcon
+              width={27.5}
+              height={28.6}
+              fill={focused ? "#ff0000ff" : "#ffffff"}
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="chat/index"
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <ChatIcon
               width={27.5}
               height={28.6}
               fill={focused ? "#ff0000ff" : "#ffffff"}

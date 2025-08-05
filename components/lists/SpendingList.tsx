@@ -5,7 +5,8 @@ type TypeSpendingList = {
   name: string;
   category: string;
   sum: string;
-  cashback: string;
+  cashback?: string;
+  isTransfer?: boolean;
 };
 
 export default function SpendingList({
@@ -14,6 +15,7 @@ export default function SpendingList({
   category,
   sum,
   cashback,
+  isTransfer,
 }: TypeSpendingList) {
   return (
     <View className="flex-row justify-between">
@@ -26,11 +28,22 @@ export default function SpendingList({
           </Text>
         </View>
       </View>
-      <View className="items-end">
-        <Text style={[styles.big, { color: "#7F7F7F" }]}>{sum}</Text>
-        <Text style={[styles.small, { color: "#7F7F7F", fontSize: 9 }]}>
-          {cashback}
+      <View className="items-end justify-center">
+        <Text
+          style={[
+            styles.big,
+            {
+              color: isTransfer ? "#78D600" : "#7F7F7F",
+            },
+          ]}
+        >
+          {sum}
         </Text>
+        {cashback ? (
+          <Text style={[styles.small, { color: "#7F7F7F", fontSize: 9 }]}>
+            {cashback}
+          </Text>
+        ) : null}
       </View>
     </View>
   );

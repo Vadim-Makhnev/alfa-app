@@ -60,7 +60,7 @@ export default function Spend() {
               name="Cofix"
               category="Рестораны"
               sum="–260,00 ₽"
-              cashback="+ 14 ₽"
+              isTransfer={true}
             />
 
             <SpendingList

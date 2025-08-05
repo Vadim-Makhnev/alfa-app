@@ -34,7 +34,7 @@ function RootLayout() {
             borderTopWidth: 0,
             elevation: 0,
             shadowOpacity: 0,
-            paddingTop: 8,
+            paddingTop: 12,
           },
 
           headerShown: false,

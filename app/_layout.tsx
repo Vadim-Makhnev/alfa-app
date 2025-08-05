@@ -52,9 +52,12 @@ function RootLayout() {
 
       <Tabs.Screen
         name="spend/index"
-        options={{
-          headerShown: false,
-        }}
+        options={{ headerShown: false, href: null }}
+      />
+
+      <Tabs.Screen
+        name="cashback/index"
+        options={{ headerShown: false, href: null }}
       />
     </Tabs>
   );

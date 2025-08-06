@@ -1,6 +1,7 @@
 import MainActivity from "@/components/activities/Activity";
 import MainAction from "@/components/cards/Actions";
 import ExpensesList from "@/components/lists/ExpensesList";
+import Bumpfest from "@/components/ui/Bumfest";
 import Ac2 from "@assets/images/ac2.svg";
 import Ac3 from "@assets/images/ac3.svg";
 import User from "@assets/images/user.svg";
@@ -141,24 +142,25 @@ export default function MainScreen() {
             />
           </TouchableOpacity>
 
-          <MainAction
-            text1="Управляй подписками"
-            text2="в одном месте"
-            pngSource={require("@assets/images/subs.png")}
-            width={100}
-            height={115}
-          />
+          <TouchableOpacity
+            onPress={() => router.push("/subscriptions")}
+            activeOpacity={0.7}
+          >
+            <MainAction
+              text1="Управляй подписками"
+              text2="в одном месте"
+              pngSource={require("@assets/images/subs.png")}
+              width={100}
+              height={115}
+            />
+          </TouchableOpacity>
         </ScrollView>
 
         <View className="mt-[27px]">
-          <Image
-            source={require("@assets/images/bumfest.png")}
-            resizeMode="cover"
-            style={{
-              width: "100%",
-              height: 267,
-            }}
-          ></Image>
+          <View className="pl-[14px]">
+            <Text style={styles.big}>Предстоящие мероприятия</Text>
+          </View>
+          <Bumpfest />
         </View>
       </ScrollView>
     </SafeAreaView>

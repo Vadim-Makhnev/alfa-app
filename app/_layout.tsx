@@ -12,6 +12,7 @@ function RootLayout() {
     StyreneBold: require("../assets/fonts/StyreneAWeb-Bold.ttf"),
     StyreneMedium: require("../assets/fonts/StyreneAWeb-Medium.ttf"),
     StyreneRegular: require("../assets/fonts/StyreneAWeb-Regular.ttf"),
+    StyreneItalic: require("../assets/fonts/StyreneAWeb-Italic.ttf"),
   });
 
   useEffect(() => {
@@ -72,7 +73,7 @@ function RootLayout() {
 
       <Tabs.Screen
         name="subscriptions/index"
-        options={{ headerShown: false }}
+        options={{ headerShown: false, href: null }}
       />
 
       <Tabs.Screen

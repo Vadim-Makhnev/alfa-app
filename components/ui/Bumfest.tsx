@@ -139,9 +139,20 @@ export default function Bumpfest() {
             </View>
 
             <Text style={{ fontFamily: "StyreneItalic", fontSize: 9 }}>
-              Обсудим на лекции с Николаем Соустиным
+              {`Обсудим\nна лекции\nс Николаем\nСоустиным`}
             </Text>
           </View>
+
+          <Image
+            source={require("@assets/images/soustin.png")}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              right: 0,
+              width: 100,
+              height: 100,
+            }}
+          ></Image>
         </View>
       </View>
     </View>

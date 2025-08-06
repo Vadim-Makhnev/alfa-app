@@ -72,7 +72,21 @@ function RootLayout() {
 
       <Tabs.Screen
         name="cashback/index"
-        options={{ headerShown: false, href: null }}
+        options={{
+          headerShown: false,
+          href: null,
+          tabBarStyle: {
+            height: 0,
+            display: "none",
+          },
+        }}
+      />
+
+      <Tabs.Screen
+        name="chat/chat"
+        options={{
+          headerShown: false,
+        }}
       />
     </Tabs>
   );

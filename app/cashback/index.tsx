@@ -3,10 +3,10 @@ import Header from "@/components/ui/Header";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function CshbackScreen() {
+export default function CashbackScreen() {
   return (
-    <SafeAreaView edges={["top"]} className="flex-1">
-      <ScrollView className="pt-[8px] px-[30px] flex-1">
+    <SafeAreaView edges={["top", "bottom"]} className="flex-1 ">
+      <ScrollView stickyHeaderIndices={[0]} className="px-[30px] flex-1">
         <Header />
 
         <View className="mt-[46px] bg-white rounded-[50px] py-[23px] px-[28px]">

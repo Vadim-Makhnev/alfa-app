@@ -1,7 +1,14 @@
 import ChatCard from "@/components/cards/Chat";
 import Search from "@assets/images/search.svg";
 import User from "@assets/images/user.svg";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ChatScreen() {
@@ -32,13 +39,18 @@ export default function ChatScreen() {
         </View>
 
         <View className="gap-[8px]">
-          <ChatCard
-            pngSource={require("@assets/images/tiger.png")}
-            name="Тигрик"
-            msg={`Николай, привет!\nЯ твой личный AI-помощник...`}
-            date="31.07"
-            notification="1"
-          />
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={() => console.log("Chat with tiger")}
+          >
+            <ChatCard
+              pngSource={require("@assets/images/tiger.png")}
+              name="Тигрик"
+              msg={`Николай, привет!\nЯ твой личный AI-помощник...`}
+              date="31.07"
+              notification="1"
+            />
+          </TouchableOpacity>
 
           <ChatCard
             pngSource={require("@assets/images/tiger.png")}

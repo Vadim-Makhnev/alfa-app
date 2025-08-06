@@ -4,12 +4,14 @@ import ExpensesList from "@/components/lists/ExpensesList";
 import Ac2 from "@assets/images/ac2.svg";
 import Ac3 from "@assets/images/ac3.svg";
 import User from "@assets/images/user.svg";
+import { router } from "expo-router";
 
 import {
   Image,
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
@@ -120,13 +122,20 @@ export default function MainScreen() {
             width={140}
             height={90}
           />
-          <MainAction
-            text1="Выбирай кэшбэк на август"
-            text2="и экономь месяц"
-            pngSource={require("@assets/images/cashbacks.png")}
-            width={86}
-            height={90}
-          />
+
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={() => router.push("/cashback")}
+          >
+            <MainAction
+              text1="Выбирай кэшбэк на август"
+              text2="и экономь месяц"
+              pngSource={require("@assets/images/cashbacks.png")}
+              width={86}
+              height={90}
+            />
+          </TouchableOpacity>
+
           <MainAction
             text1="Управляй подписками"
             text2="в одном месте"

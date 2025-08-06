@@ -1,20 +1,14 @@
 import ChatCard from "@/components/cards/Chat";
 import Search from "@assets/images/search.svg";
 import User from "@assets/images/user.svg";
-import {
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { router } from "expo-router";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ChatScreen() {
   return (
     <SafeAreaView edges={["top"]} className="flex-1 bg-bg">
-      <ScrollView className="pt-[8px] px-[30px] flex-1 ">
+      <View className="pt-[8px] px-[30px] flex-1 ">
         <View className="flex-row justify-between mb-[14px]">
           <Image
             source={require("@assets/images/alfa.png")}
@@ -41,7 +35,7 @@ export default function ChatScreen() {
         <View className="gap-[8px]">
           <TouchableOpacity
             activeOpacity={0.7}
-            onPress={() => console.log("Chat with tiger")}
+            onPress={() => router.push("/chat/chat")}
           >
             <ChatCard
               pngSource={require("@assets/images/tiger.png")}
@@ -84,7 +78,7 @@ export default function ChatScreen() {
             notification="1"
           />
         </View>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }

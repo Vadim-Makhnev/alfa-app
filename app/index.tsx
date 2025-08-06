@@ -103,7 +103,12 @@ export default function MainScreen() {
         <View>
           <View className="flex-row justify-between items-center mb-[10px] pl-[14px] pr-[15px]">
             <Text style={styles.big}>Твои расходы</Text>
-            <Text style={styles.small}>Посмотреть все</Text>
+            <TouchableOpacity
+              onPress={() => router.push("/spend")}
+              activeOpacity={0.7}
+            >
+              <Text style={styles.small}>Посмотреть все</Text>
+            </TouchableOpacity>
           </View>
 
           <ExpensesList />

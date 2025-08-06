@@ -20,7 +20,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function MainScreen() {
   return (
     <SafeAreaView edges={["top"]} className="flex-1 bg-bg">
-      <ScrollView className="pt-[8px] px-[30px] flex-1 ">
+      <ScrollView className="px-[30px] flex-1 ">
         <View className="flex-row justify-between mb-[36px]">
           <Image
             source={require("@assets/images/alfa.png")}

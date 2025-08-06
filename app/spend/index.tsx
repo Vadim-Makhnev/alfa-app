@@ -8,7 +8,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Spend() {
   return (
     <SafeAreaView edges={["top"]} className="flex-1">
-      <ScrollView className="pt-[8px] px-[30px] flex-1">
+      <ScrollView stickyHeaderIndices={[0]} className="px-[30px] flex-1">
         <Header />
 
         <View className="mt-[36px] h-[200px] w-full bg-white rounded-[50px] pl-[22px] py-[23px] pr-[15px] justify-between">

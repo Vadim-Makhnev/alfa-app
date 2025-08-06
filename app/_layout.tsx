@@ -71,6 +71,11 @@ function RootLayout() {
       />
 
       <Tabs.Screen
+        name="subscriptions/index"
+        options={{ headerShown: false }}
+      />
+
+      <Tabs.Screen
         name="cashback/index"
         options={{
           headerShown: false,

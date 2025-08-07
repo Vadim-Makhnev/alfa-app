@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function Bumpfest() {
   return (
-    <View className="mt-[10px] flex-row gap-[16px] mb-[20px]">
+    <View className="mt-[10px] flex-row gap-[16px] mb-[20px] justify-between">
       <View
         style={{
           backgroundColor: "#EF3124",

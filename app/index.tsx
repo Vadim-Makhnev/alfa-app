@@ -2,9 +2,9 @@ import MainActivity from "@/components/activities/Activity";
 import MainAction from "@/components/cards/Actions";
 import ExpensesList from "@/components/lists/ExpensesList";
 import Bumpfest from "@/components/ui/Bumfest";
+import HeaderWithLogo from "@/components/ui/HeaderWithLogo";
 import Ac2 from "@assets/images/ac2.svg";
 import Ac3 from "@assets/images/ac3.svg";
-import User from "@assets/images/user.svg";
 import { router } from "expo-router";
 
 import {
@@ -22,18 +22,8 @@ export default function MainScreen() {
   return (
     <SafeAreaView edges={["top"]} className="flex-1 bg-bg">
       <ScrollView className="px-[30px] flex-1 ">
-        <View className="flex-row justify-between mb-[36px]">
-          <Image
-            source={require("@assets/images/alfa.png")}
-            resizeMode="cover"
-            style={{ width: 30, height: 43 }}
-          ></Image>
+        <HeaderWithLogo />
 
-          <View className="flex-row items-center gap-[13px]">
-            <Text style={[styles.text, { color: "black" }]}>Николай Ч.</Text>
-            <User width={43} height={43} />
-          </View>
-        </View>
         <View
           className="bg-white rounded-[50px] w-full h-[326px] px-[9px] pt-[10px] mb-[24px]"
           style={styles.cardShadow}

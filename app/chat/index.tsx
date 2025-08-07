@@ -1,26 +1,15 @@
 import ChatCard from "@/components/cards/Chat";
+import HeaderWithLogo from "@/components/ui/HeaderWithLogo";
 import Search from "@assets/images/search.svg";
-import User from "@assets/images/user.svg";
 import { router } from "expo-router";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ChatScreen() {
   return (
     <SafeAreaView edges={["top"]} className="flex-1 bg-bg">
       <View className="px-[30px] flex-1 ">
-        <View className="flex-row justify-between mb-[14px]">
-          <Image
-            source={require("@assets/images/alfa.png")}
-            resizeMode="cover"
-            style={{ width: 30, height: 43 }}
-          ></Image>
-
-          <View className="flex-row items-center gap-[13px]">
-            <Text style={styles.text}>Николай Ч.</Text>
-            <User width={43} height={43} />
-          </View>
-        </View>
+        <HeaderWithLogo />
 
         <View
           className="w-full rounded-[10px]"

@@ -8,7 +8,7 @@ export default function TigerHeader() {
       <TouchableOpacity
         activeOpacity={0.7}
         hitSlop={20}
-        onPress={() => router.back()}
+        onPress={() => router.replace("/chat")}
       >
         <View>
           <Arrow width={11} height={18} />

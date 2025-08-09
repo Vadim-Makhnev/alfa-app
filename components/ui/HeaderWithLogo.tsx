@@ -1,9 +1,16 @@
 import User from "@assets/images/user.svg";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-export default function HeaderWithLogo() {
+type TypeMargin = {
+  margin?: number;
+};
+
+export default function HeaderWithLogo({ margin = 36 }: TypeMargin) {
   return (
-    <View className="flex-row justify-between mb-[36px]">
+    <View
+      className="flex-row justify-between "
+      style={{ marginBottom: margin }}
+    >
       <Image
         source={require("@assets/images/alfa.png")}
         resizeMode="cover"

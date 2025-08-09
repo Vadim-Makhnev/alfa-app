@@ -2,11 +2,11 @@ import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function Bumpfest() {
   return (
-    <View className="mt-[10px] flex-row gap-[16px] mb-[20px] justify-between">
+    <View className="mt-[10px] flex-row mb-[20px] justify-between">
       <View
         style={{
           backgroundColor: "#EF3124",
-          height: 238,
+          height: 248,
           borderRadius: 28,
           paddingTop: 19,
           paddingBottom: 16,
@@ -28,7 +28,6 @@ export default function Bumpfest() {
                 borderRadius: 16,
                 paddingVertical: 3,
                 paddingHorizontal: 14.5,
-                width: "100%",
               }}
             >
               <Text style={styles.big15}>ФЕСТ</Text>
@@ -107,6 +106,7 @@ export default function Bumpfest() {
             height: 153,
             width: 162,
             borderRadius: 28,
+            marginTop: 10,
           }}
         >
           <View

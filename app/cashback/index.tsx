@@ -6,10 +6,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function CashbackScreen() {
   return (
     <SafeAreaView edges={["top", "bottom"]} className="flex-1 ">
-      <ScrollView stickyHeaderIndices={[0]} className="px-[30px] flex-1">
+      <ScrollView stickyHeaderIndices={[0]} className="px-[20px] flex-1">
         <Header />
 
-        <View className="mt-[46px] bg-white rounded-[50px] py-[23px] px-[28px]">
+        <View className="bg-white rounded-[50px] py-[23px] px-[28px]">
           <Text style={styles.big}>Какие 5 категорий</Text>
           <Text style={[styles.big, { marginBottom: 19 }]}>
             выбираешь на август?

@@ -96,6 +96,13 @@ function RootLayout() {
       />
 
       <Tabs.Screen
+        name="boom/group"
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      <Tabs.Screen
         name="chat/chat"
         options={{
           headerShown: false,

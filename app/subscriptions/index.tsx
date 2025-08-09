@@ -6,7 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function SubscriptionsScreen() {
   return (
     <SafeAreaView edges={["top", "bottom"]} className="flex-1">
-      <View className="px-[30px] flex-1">
+      <View className="px-[20px] flex-1">
         <Header />
 
         <View
@@ -17,7 +17,7 @@ export default function SubscriptionsScreen() {
             paddingBottom: 30,
           }}
         >
-          <View className="mt-[24px] gap-[12px]">
+          <View className="gap-[12px]">
             <Text style={styles.text}>Твои подписки</Text>
 
             <SubCrad

@@ -15,7 +15,7 @@ import Wave6 from "@assets/images/wave6.svg";
 export default function BoomScreen() {
   return (
     <SafeAreaView edges={["top"]} className="flex-1">
-      <ScrollView className="px-[30px] flex-1">
+      <ScrollView className="px-[20px] flex-1">
         <HeaderWithLogo />
 
         <View

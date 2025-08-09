@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <View
       className="flex-row justify-between items-center"
-      style={{ backgroundColor: "#F3F3F3" }}
+      style={{ backgroundColor: "#F3F3F3", marginBottom: 36 }}
     >
       <TouchableOpacity
         hitSlop={20}

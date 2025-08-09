@@ -8,7 +8,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function ChatScreen() {
   return (
     <SafeAreaView edges={["top"]} className="flex-1 bg-bg">
-      <View className="px-[30px] flex-1 ">
+      <View className="px-[20px] flex-1 ">
         <HeaderWithLogo />
 
         <View

@@ -21,7 +21,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function MainScreen() {
   return (
     <SafeAreaView edges={["top"]} className="flex-1 bg-bg">
-      <ScrollView className="px-[30px] flex-1 ">
+      <ScrollView className="px-[20px] flex-1 ">
         <HeaderWithLogo />
 
         <View

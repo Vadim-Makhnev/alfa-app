@@ -11,7 +11,7 @@ export default function Spend() {
       <ScrollView stickyHeaderIndices={[0]} className="px-[30px] flex-1">
         <Header />
 
-        <View className="mt-[36px] h-[200px] w-full bg-white rounded-[50px] pl-[22px] py-[23px] pr-[15px] justify-between">
+        <View className="h-[200px] w-full bg-white rounded-[50px] pl-[22px] py-[23px] pr-[15px] justify-between">
           <View className="pl-[6px] mb-[6px]">
             <Text style={styles.big}>Траты по месяцам</Text>
             <Text style={styles.small}>и прогноз на август</Text>

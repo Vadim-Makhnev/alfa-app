@@ -25,7 +25,7 @@ export default function ChatCard({
   noname,
 }: TypeChatCard) {
   return (
-    <View className="flex-row items-center justify-between bg-white rounded-[18px] px-[11px] pt-[13px] pb-[11px]">
+    <View className="flex-row items-center justify-between bg-white rounded-[18px] px-[6px] pt-[13px] pb-[11px]">
       <Image source={pngSource} style={{ width: 65.1, height: 63 }}></Image>
 
       <View className="flex-row">

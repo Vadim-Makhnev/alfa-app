@@ -84,7 +84,7 @@ export default function ProfileScreen() {
               </View>
 
               <View
-                className="flex-row gap-[16px] justify-between"
+                className="flex-row gap-[16px] justify-evenly"
                 style={{ flexWrap: "wrap" }}
               >
                 {collection1.map((col, i) => (
@@ -93,7 +93,7 @@ export default function ProfileScreen() {
                     style={[
                       {
                         backgroundColor: "white",
-                        width: 179,
+                        width: 168,
                         height: 174,
                         alignItems: "center",
                         gap: 11,
@@ -148,7 +148,7 @@ export default function ProfileScreen() {
               </View>
 
               <View
-                className="flex-row gap-[16px] justify-between"
+                className="flex-row gap-[16px] justify-evenly"
                 style={{ flexWrap: "wrap" }}
               >
                 {secret.map((col, i) => (
@@ -157,7 +157,7 @@ export default function ProfileScreen() {
                     style={[
                       {
                         backgroundColor: "white",
-                        width: 179,
+                        width: 168,
                         height: 174,
                         alignItems: "center",
                         gap: 11,
@@ -288,7 +288,7 @@ export default function ProfileScreen() {
 
   return (
     <SafeAreaView edges={["top"]} className="flex-1">
-      <View className="flex-1 px-[20px]">
+      <View className="flex-1 px-[15px]">
         <Header display={false} />
         <View style={{ marginBottom: 22 }}>
           <View className="items-center">

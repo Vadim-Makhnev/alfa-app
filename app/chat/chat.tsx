@@ -45,7 +45,7 @@ export default function ChatWithTiger() {
               placeholderTextColor={"#929CA7"}
               style={{
                 backgroundColor: "#EFEFF4",
-                width: 280,
+                width: "80%",
                 height: 46,
                 borderRadius: 17,
                 paddingLeft: 20,

@@ -165,6 +165,18 @@ function RootLayout() {
           },
         }}
       />
+
+      <Tabs.Screen
+        name="chat/grinch"
+        options={{
+          headerShown: false,
+          href: null,
+          tabBarStyle: {
+            height: 0,
+            display: "none",
+          },
+        }}
+      />
     </Tabs>
   );
 }

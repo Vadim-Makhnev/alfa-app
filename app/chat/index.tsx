@@ -54,15 +54,20 @@ export default function ChatScreen() {
               noname={true}
             />
 
-            <ChatCard
-              pngSource={require("@assets/images/grinch.png")}
-              name="Гринчи"
-              msg={`я в груше на покре, срочно нужен бам!!!!`}
-              date="08:57"
-              notification="1"
-              group={true}
-              from={"Илья:"}
-            />
+            <TouchableOpacity
+              activeOpacity={0.7}
+              onPress={() => router.push("/chat/grinch")}
+            >
+              <ChatCard
+                pngSource={require("@assets/images/grinch.png")}
+                name="Гринчи"
+                msg={`я в груше на покре, срочно нужен бам!!!!`}
+                date="08:57"
+                notification="1"
+                group={true}
+                from={"Илья:"}
+              />
+            </TouchableOpacity>
 
             <ChatCard
               pngSource={require("@assets/images/olyachat.png")}
@@ -79,13 +84,15 @@ export default function ChatScreen() {
               name="Настя П."
               msg={`ты где? го бампнимся в кофиксе?))`}
               date="29.07"
+              noname={true}
             />
 
             <ChatCard
               pngSource={require("@assets/images/ilyachat.png")}
               name="Илья П."
-              msg={`сейчас подойду`}
+              msg="сейчас подойду"
               date="29.07"
+              noname={true}
             />
 
             <ChatCard
@@ -93,6 +100,7 @@ export default function ChatScreen() {
               name="Вадим М."
               msg={`хочу повысить кэшбек на дринкит, может сходим туда?`}
               date="28.07"
+              noname={true}
             />
           </View>
         </ScrollView>

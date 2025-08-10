@@ -25,11 +25,11 @@ export default function ChatCard({
   noname,
 }: TypeChatCard) {
   return (
-    <View className="flex-row items-center justify-between bg-white rounded-[18px] px-[6px] pt-[13px] pb-[11px]">
+    <View className="flex-row items-center justify-between bg-white rounded-[18px] px-[7px] pt-[13px] pb-[11px]">
       <Image source={pngSource} style={{ width: 65.1, height: 63 }}></Image>
 
       <View className="flex-row">
-        <View style={{ flexWrap: "nowrap", width: 230 }}>
+        <View style={{ flexWrap: "nowrap", width: 225 }}>
           {group ? (
             <View className="flex-row gap-[2px]">
               <People />

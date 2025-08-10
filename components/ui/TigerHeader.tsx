@@ -2,7 +2,7 @@ import Arrow from "@assets/images/arrow.svg";
 import { router } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function TigerHeader() {
+export default function TigerHeader({ pngSource }: { pngSource?: any }) {
   return (
     <View className="flex-row items-center gap-[16px]">
       <TouchableOpacity
@@ -14,10 +14,14 @@ export default function TigerHeader() {
           <Arrow width={11} height={18} />
         </View>
       </TouchableOpacity>
-      <Image
-        style={{ width: 40, height: 40 }}
-        source={require("@assets/images/ctiger.png")}
-      ></Image>
+      {!pngSource ? (
+        <Image
+          style={{ width: 40, height: 40 }}
+          source={require("@assets/images/ctiger.png")}
+        ></Image>
+      ) : (
+        <Image style={{ width: 40, height: 40 }} source={pngSource}></Image>
+      )}
       <View>
         <Text style={styles.name}>Тигрик</Text>
         <Text style={styles.desc}>Помощник по всем вопросам</Text>

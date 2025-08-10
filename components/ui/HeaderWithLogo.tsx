@@ -1,5 +1,12 @@
 import User from "@assets/images/user.svg";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { router } from "expo-router";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 
 type TypeMargin = {
   margin?: number;
@@ -19,7 +26,9 @@ export default function HeaderWithLogo({ margin = 36 }: TypeMargin) {
 
       <View className="flex-row items-center gap-[13px]">
         <Text style={[styles.text, { color: "black" }]}>Николай Ч.</Text>
-        <User width={43} height={43} />
+        <TouchableWithoutFeedback onPress={() => router.push("/profile")}>
+          <User width={43} height={43} />
+        </TouchableWithoutFeedback>
       </View>
     </View>
   );

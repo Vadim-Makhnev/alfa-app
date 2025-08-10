@@ -1,7 +1,13 @@
 import Arrow from "@assets/images/arrow.svg";
 import User from "@assets/images/user.svg";
 import { router } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 
 type TypeHeader = {
   display?: boolean;
@@ -26,7 +32,9 @@ export default function Header({ display = true }: TypeHeader) {
       {display ? (
         <View className="flex-row items-center gap-[13px]">
           <Text style={[styles.text, { color: "black" }]}>Николай Ч.</Text>
-          <User />
+          <TouchableWithoutFeedback onPress={() => router.push("/profile")}>
+            <User />
+          </TouchableWithoutFeedback>
         </View>
       ) : null}
     </View>

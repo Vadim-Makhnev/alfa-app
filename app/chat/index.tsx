@@ -2,7 +2,13 @@ import ChatCard from "@/components/cards/Chat";
 import HeaderWithLogo from "@/components/ui/HeaderWithLogo";
 import Search from "@assets/images/search.svg";
 import { router } from "expo-router";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ChatScreen() {
@@ -21,52 +27,75 @@ export default function ChatScreen() {
           </View>
         </View>
 
-        <View className="gap-[8px]">
-          <TouchableOpacity
-            activeOpacity={0.7}
-            onPress={() => router.push("/chat/chat")}
-          >
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View className="gap-[8px] mb-[24px]">
+            <TouchableOpacity
+              activeOpacity={0.7}
+              onPress={() => router.push("/chat/chat")}
+            >
+              <ChatCard
+                pngSource={require("@assets/images/tiger.png")}
+                name="Тигрик"
+                msg={`Николай, привет!\nЯ твой личный AI-помощник...`}
+                date="31.07"
+                notification="1"
+              />
+            </TouchableOpacity>
+
             <ChatCard
-              pngSource={require("@assets/images/tiger.png")}
-              name="Тигрик"
-              msg={`Николай, привет!\nЯ твой личный AI-помощник...`}
-              date="31.07"
-              notification="1"
+              pngSource={require("@assets/images/familia.png")}
+              name="Семья"
+              msg={`Сыночке-корзиночке на кофе`}
+              date="09:23"
+              notification="2"
+              group={true}
+              from="Мама:"
+              sum=" + 1000 ₽"
+              noname={true}
             />
-          </TouchableOpacity>
 
-          <ChatCard
-            pngSource={require("@assets/images/tiger.png")}
-            name="Тигрик"
-            msg={`Николай, привет!\nЯ твой личный AI-помощник...`}
-            date="31.07"
-            notification="1"
-          />
+            <ChatCard
+              pngSource={require("@assets/images/grinch.png")}
+              name="Гринчи"
+              msg={`я в груше на покре, срочно нужен бам!!!!`}
+              date="08:57"
+              notification="1"
+              group={true}
+              from={"Илья:"}
+            />
 
-          <ChatCard
-            pngSource={require("@assets/images/tiger.png")}
-            name="Тигрик"
-            msg={`Николай, привет!\nЯ твой личный AI-помощник...`}
-            date="31.07"
-            notification="1"
-          />
+            <ChatCard
+              pngSource={require("@assets/images/olyachat.png")}
+              name="Ольга В."
+              msg={`за пиццу и... спасибо за бам`}
+              date="31.07"
+              from={"Ольга В.:"}
+              sum={" + 300 ₽"}
+              noname={true}
+            />
 
-          <ChatCard
-            pngSource={require("@assets/images/tiger.png")}
-            name="Тигрик"
-            msg={`Николай, привет!\nЯ твой личный AI-помощник...`}
-            date="31.07"
-            notification="1"
-          />
+            <ChatCard
+              pngSource={require("@assets/images/nastyachat.png")}
+              name="Настя П."
+              msg={`ты где? го бампнимся в кофиксе?))`}
+              date="29.07"
+            />
 
-          <ChatCard
-            pngSource={require("@assets/images/tiger.png")}
-            name="Тигрик"
-            msg={`Николай, привет!\nЯ твой личный AI-помощник...`}
-            date="31.07"
-            notification="1"
-          />
-        </View>
+            <ChatCard
+              pngSource={require("@assets/images/ilyachat.png")}
+              name="Илья П."
+              msg={`сейчас подойду`}
+              date="29.07"
+            />
+
+            <ChatCard
+              pngSource={require("@assets/images/vadimchat.png")}
+              name="Вадим М."
+              msg={`хочу повысить кэшбек на дринкит, может сходим туда?`}
+              date="28.07"
+            />
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );

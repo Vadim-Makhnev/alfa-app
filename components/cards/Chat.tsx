@@ -1,3 +1,4 @@
+import People from "@assets/images/people.svg";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 type TypeChatCard = {
@@ -6,6 +7,10 @@ type TypeChatCard = {
   msg: string;
   date: string;
   notification?: string;
+  from?: string;
+  sum?: string;
+  group?: boolean;
+  noname?: boolean;
 };
 
 export default function ChatCard({
@@ -14,14 +19,50 @@ export default function ChatCard({
   msg,
   date,
   notification,
+  from,
+  sum,
+  group,
+  noname,
 }: TypeChatCard) {
   return (
     <View className="flex-row items-center justify-between bg-white rounded-[18px] px-[11px] pt-[13px] pb-[11px]">
       <Image source={pngSource} style={{ width: 65.1, height: 63 }}></Image>
+
       <View className="flex-row">
-        <View>
-          <Text style={styles.text}>{name}</Text>
-          <Text style={styles.msg}>{msg}</Text>
+        <View style={{ flexWrap: "nowrap", width: 230 }}>
+          {group ? (
+            <View className="flex-row gap-[2px]">
+              <People />
+              <Text style={styles.text}>{name}</Text>
+            </View>
+          ) : (
+            <Text style={styles.text}>{name}</Text>
+          )}
+
+          {sum && from ? (
+            <Text>
+              <Text style={{ fontFamily: "StyreneRegular", fontSize: 15 }}>
+                {from}
+              </Text>
+              <Text
+                style={{
+                  fontFamily: "StyreneRegular",
+                  fontSize: 15,
+                  color: "#80E400",
+                }}
+              >
+                {sum}
+              </Text>
+            </Text>
+          ) : null}
+
+          {!noname ? (
+            <Text style={styles.msg}>
+              {from ? from : null} {msg}
+            </Text>
+          ) : (
+            <Text style={styles.msg}>{msg}</Text>
+          )}
         </View>
         <View className="justify-between items-end">
           <Text style={styles.msg}>{date}</Text>

@@ -175,17 +175,7 @@ export default function MapScreen() {
                 alignSelf: "center",
                 borderRadius: 25,
               }}
-            >
-              <Text
-                style={{
-                  fontFamily: "StyreneRegular",
-                  fontSize: 14,
-                  color: "white",
-                }}
-              >
-                Исследовано 26%
-              </Text>
-            </View>
+            ></View>
           </View>
         </View>
 

@@ -69,7 +69,12 @@ export default function ProfileScreen() {
           <ScrollView showsVerticalScrollIndicator={false}>
             <View>
               <View className="mb-[13px]">
-                <Text style={{ fontFamily: "StyreneMedium", fontSize: 20 }}>
+                <Text
+                  style={{
+                    fontFamily: "StyreneMedium",
+                    fontSize: 20,
+                  }}
+                >
                   Стандартная коллекция
                 </Text>
                 <Text
@@ -116,8 +121,8 @@ export default function ProfileScreen() {
                       <View
                         style={{
                           position: "absolute",
-                          top: 10,
-                          right: 10,
+                          top: 7,
+                          right: 7,
                           backgroundColor: "#E5E5E5",
                           padding: 7,
                           borderRadius: 50,
@@ -195,8 +200,8 @@ export default function ProfileScreen() {
                       <View
                         style={{
                           position: "absolute",
-                          top: 10,
-                          right: 10,
+                          top: 7,
+                          right: 7,
                           backgroundColor: "#E5E5E5",
                           borderRadius: 50,
                           padding: 7,

@@ -115,6 +115,13 @@ function RootLayout() {
       />
 
       <Tabs.Screen
+        name="profile/index"
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      <Tabs.Screen
         name="chat/chat"
         options={{
           headerShown: false,

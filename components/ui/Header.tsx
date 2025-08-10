@@ -3,7 +3,11 @@ import User from "@assets/images/user.svg";
 import { router } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function Header() {
+type TypeHeader = {
+  display?: boolean;
+};
+
+export default function Header({ display = true }: TypeHeader) {
   return (
     <View
       className="flex-row justify-between items-center"
@@ -18,10 +22,13 @@ export default function Header() {
           <Arrow width={11} height={18} />
         </View>
       </TouchableOpacity>
-      <View className="flex-row items-center gap-[13px]">
-        <Text style={[styles.text, { color: "black" }]}>Николай Ч.</Text>
-        <User />
-      </View>
+
+      {display ? (
+        <View className="flex-row items-center gap-[13px]">
+          <Text style={[styles.text, { color: "black" }]}>Николай Ч.</Text>
+          <User />
+        </View>
+      ) : null}
     </View>
   );
 }

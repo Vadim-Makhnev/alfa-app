@@ -2,6 +2,8 @@ import User from "@/components/cards/User";
 import Header from "@/components/ui/Header";
 import Barrow from "@assets/images/barrow.svg";
 import Edit2 from "@assets/images/edit-2.svg";
+import Lock from "@assets/images/lock.svg";
+import Secret from "@assets/images/secret.svg";
 import { useState } from "react";
 import {
   Image,
@@ -16,7 +18,25 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function ProfileScreen() {
   const [activeIndex, setActiveIndex] = useState(0);
   const buttons = ["Моя визитка", "Коллекция", "Знакомые"];
-  const collection1 = ["движение", "движение", "движение", "движение"];
+  const secret = ["Звезда танцпола", "Секретное движение"];
+  const collection1 = [
+    "Привет-Привет!",
+    "Уже бегу",
+    "Режим перезагрузки",
+    "В игре!",
+  ];
+
+  const images = [
+    require("@assets/images/hello.png"),
+    require("@assets/images/run.png"),
+    require("@assets/images/reboot.png"),
+    require("@assets/images/game.png"),
+  ];
+
+  const images2 = [
+    require("@assets/images/dance.png"),
+    require("@assets/images/secret.svg"),
+  ];
 
   const renderContent = () => {
     switch (activeIndex) {
@@ -70,25 +90,42 @@ export default function ProfileScreen() {
                 {collection1.map((col, i) => (
                   <View
                     key={i}
-                    style={{
-                      backgroundColor: "white",
-                      paddingHorizontal: 37,
-                      paddingTop: 20,
-                      paddingBottom: 23,
-                      borderRadius: 28,
-                      alignItems: "center",
-                      gap: 11,
-                    }}
+                    style={[
+                      {
+                        backgroundColor: "white",
+                        width: 179,
+                        height: 174,
+                        alignItems: "center",
+                        gap: 11,
+                        justifyContent: "center",
+                        borderRadius: 28,
+                      },
+                      styles.cardShadow,
+                      i === 3 && { opacity: 0.5 },
+                    ]}
                   >
-                    <View
-                      style={{
-                        backgroundColor: "#F0F0F0",
-                        width: 104,
-                        height: 104,
-                        borderRadius: 20,
-                      }}
-                    ></View>
-                    <Text>{col}</Text>
+                    <Image
+                      source={images[i]}
+                      style={{ width: 104, height: 104 }}
+                    ></Image>
+                    <Text style={{ fontFamily: "StyreneMedium", fontSize: 12 }}>
+                      {col}
+                    </Text>
+
+                    {i === 3 ? (
+                      <View
+                        style={{
+                          position: "absolute",
+                          top: 10,
+                          right: 10,
+                          backgroundColor: "#E5E5E5",
+                          padding: 7,
+                          borderRadius: 50,
+                        }}
+                      >
+                        <Lock />
+                      </View>
+                    ) : null}
                   </View>
                 ))}
               </View>
@@ -114,28 +151,60 @@ export default function ProfileScreen() {
                 className="flex-row gap-[16px] justify-between"
                 style={{ flexWrap: "wrap" }}
               >
-                {collection1.map((col, i) => (
+                {secret.map((col, i) => (
                   <View
                     key={i}
-                    style={{
-                      backgroundColor: "white",
-                      paddingHorizontal: 37,
-                      paddingTop: 20,
-                      paddingBottom: 23,
-                      borderRadius: 28,
-                      alignItems: "center",
-                      gap: 11,
-                    }}
+                    style={[
+                      {
+                        backgroundColor: "white",
+                        width: 179,
+                        height: 174,
+                        alignItems: "center",
+                        gap: 11,
+                        justifyContent: "center",
+                        borderRadius: 28,
+                      },
+                      styles.cardShadow,
+                      i === 1 && { opacity: 0.5 },
+                    ]}
                   >
-                    <View
-                      style={{
-                        backgroundColor: "#F0F0F0",
-                        width: 104,
-                        height: 104,
-                        borderRadius: 20,
-                      }}
-                    ></View>
-                    <Text>{col}</Text>
+                    {i === 0 ? (
+                      <Image
+                        source={images2[i]}
+                        style={{ width: 104, height: 104 }}
+                      ></Image>
+                    ) : (
+                      <View
+                        style={{
+                          backgroundColor: "#F0F0F0",
+                          borderRadius: 20,
+                          width: 104,
+                          height: 104,
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Secret />
+                      </View>
+                    )}
+
+                    <Text style={{ fontFamily: "StyreneMedium", fontSize: 12 }}>
+                      {col}
+                    </Text>
+                    {i === 1 ? (
+                      <View
+                        style={{
+                          position: "absolute",
+                          top: 10,
+                          right: 10,
+                          backgroundColor: "#E5E5E5",
+                          borderRadius: 50,
+                          padding: 7,
+                        }}
+                      >
+                        <Lock />
+                      </View>
+                    ) : null}
                   </View>
                 ))}
               </View>
@@ -283,5 +352,12 @@ const styles = StyleSheet.create({
     fontFamily: "StyreneMedium",
     fontSize: 12,
     color: "#AAAAAA",
+  },
+  cardShadow: {
+    shadowColor: "#000000",
+    shadowOffset: { width: 4, height: 0 },
+    shadowOpacity: 0.04,
+    shadowRadius: 20,
+    elevation: 5,
   },
 });

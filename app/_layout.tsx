@@ -1,5 +1,7 @@
-import HomeIcon from "@assets/images/home.svg";
-import ChatIcon from "@assets/images/message.svg";
+import CartIcon from "@assets/icons/CartIcon.svg";
+import HomeIcon from "@assets/icons/HomeIcon.svg";
+import MapIcon from "@assets/icons/MapIcon.svg";
+import ChatIcon from "@assets/icons/MsgIcon.svg";
 import { useFonts } from "expo-font";
 import { SplashScreen, Tabs } from "expo-router";
 import { useEffect } from "react";
@@ -46,7 +48,7 @@ function RootLayout() {
             <HomeIcon
               width={27.5}
               height={28.6}
-              fill={focused ? "#ff0000ff" : "#ffffff"}
+              fill={focused ? "#EF3124" : "#EFEFF4"}
             />
           ),
         }}
@@ -60,7 +62,7 @@ function RootLayout() {
             <ChatIcon
               width={27.5}
               height={28.6}
-              fill={focused ? "#ff0000ff" : "#ffffff"}
+              fill={focused ? "#EF3124" : "#EFEFF4"}
             />
           ),
         }}
@@ -80,6 +82,13 @@ function RootLayout() {
         name="boom/index"
         options={{
           headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <CartIcon
+              width={27.5}
+              height={28.6}
+              fill={focused ? "#EF3124" : "#EFEFF4"}
+            />
+          ),
         }}
       />
 
@@ -111,6 +120,13 @@ function RootLayout() {
         name="map/index"
         options={{
           headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <MapIcon
+              width={27.5}
+              height={28.6}
+              fill={focused ? "#EF3124" : "#EFEFF4"}
+            />
+          ),
         }}
       />
 

@@ -193,9 +193,11 @@ export default function BoomComponent() {
                 left: 0,
                 backgroundColor: "#EF3124",
                 height: "100%",
-                width: 148,
+                width: 100,
+                borderRadius: 16,
               }}
             ></View>
+            {/** Width тут это сама шкала, ее расстояние */}
           </View>
 
           {/** Внутренний блок */}

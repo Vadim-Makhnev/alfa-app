@@ -166,16 +166,6 @@ export default function MapScreen() {
                 Центральный район
               </Text>
             </View>
-
-            <View
-              style={{
-                backgroundColor: "#EF3124",
-                paddingVertical: 5.5,
-                paddingHorizontal: 9.5,
-                alignSelf: "center",
-                borderRadius: 25,
-              }}
-            ></View>
           </View>
         </View>
 

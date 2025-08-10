@@ -3,6 +3,7 @@ import MainAction from "@/components/cards/Actions";
 import ExpensesList from "@/components/lists/ExpensesList";
 import Bumpfest from "@/components/ui/Bumfest";
 import HeaderWithLogo from "@/components/ui/HeaderWithLogo";
+import ModalWindow from "@/components/ui/ModalWinndows";
 import Ac2 from "@assets/images/ac2.svg";
 import Ac3 from "@assets/images/ac3.svg";
 import { router } from "expo-router";
@@ -153,6 +154,7 @@ export default function MainScreen() {
           <Bumpfest />
         </View>
       </ScrollView>
+      <ModalWindow />
     </SafeAreaView>
   );
 }

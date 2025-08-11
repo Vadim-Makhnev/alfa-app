@@ -6,9 +6,11 @@ import ChatIcon from "@assets/icons/MsgIcon.svg";
 import { useFonts } from "expo-font";
 import { SplashScreen, Tabs } from "expo-router";
 import { useEffect, useState } from "react";
+import { enableScreens } from "react-native-screens";
 import "./globals.css";
 
 SplashScreen.preventAutoHideAsync();
+enableScreens();
 
 function RootLayout() {
   const [fontsLoaded, error] = useFonts({
@@ -60,6 +62,7 @@ function RootLayout() {
           shadowOpacity: 0,
           paddingTop: 12,
         },
+        animation: "shift",
       }}
     >
       <Tabs.Screen
@@ -106,7 +109,7 @@ function RootLayout() {
 
       <Tabs.Screen
         name="spend/index"
-        options={{ headerShown: false, href: null }}
+        options={{ headerShown: false, href: null, animation: "shift" }}
       />
 
       <Tabs.Screen
@@ -123,7 +126,14 @@ function RootLayout() {
 
       <Tabs.Screen
         name="subscriptions/index"
-        options={{ headerShown: false, href: null }}
+        options={{
+          headerShown: false,
+          href: null,
+          tabBarStyle: {
+            height: 0,
+            display: "none",
+          },
+        }}
       />
 
       <Tabs.Screen

@@ -5,6 +5,7 @@ type TypeExploreCard = {
   pngSource: any;
   width: number;
   height: number;
+  newItem?: boolean;
 };
 
 export default function ExploreCard({
@@ -12,6 +13,7 @@ export default function ExploreCard({
   pngSource,
   width,
   height,
+  newItem,
 }: TypeExploreCard) {
   return (
     <View
@@ -45,7 +47,19 @@ export default function ExploreCard({
           style={{ width: width, height: height }}
         ></Image>
       </View>
-      <Text>{name}</Text>
+      {newItem ? (
+        <Image
+          source={require("@assets/images/new.png")}
+          style={{
+            width: 68,
+            height: 40,
+            position: "absolute",
+            top: -12,
+            right: -14,
+          }}
+        ></Image>
+      ) : null}
+      <Text style={{ fontFamily: "StyreneMedium", fontSize: 15 }}>{name}</Text>
     </View>
   );
 }

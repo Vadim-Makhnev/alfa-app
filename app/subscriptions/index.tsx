@@ -13,7 +13,7 @@ export default function SubscriptionsScreen() {
           style={{
             flexDirection: "column",
             justifyContent: "space-between",
-            height: "100%",
+            flex: 1,
             paddingBottom: 30,
           }}
         >

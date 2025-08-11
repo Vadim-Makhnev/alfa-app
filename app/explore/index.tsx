@@ -45,21 +45,22 @@ export default function ExploreProducts() {
 
         <ExploreCard
           pngSource={require("@assets/images/alfabum.png")}
-          name="новая карта"
+          name="Альфа Бам"
           width={83}
           height={72}
+          newItem={true}
         />
 
         <ExploreCard
           pngSource={require("@assets/images/invest.png")}
-          name="новая карта"
+          name="инвестиции"
           width={83}
           height={68}
         />
 
         <ExploreCard
           pngSource={require("@assets/images/own.png")}
-          name="новая карта"
+          name="самозанятость"
           width={83}
           height={68}
         />

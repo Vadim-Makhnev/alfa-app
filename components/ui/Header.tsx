@@ -1,6 +1,6 @@
 import Arrow from "@assets/images/arrow.svg";
 import User from "@assets/images/user.svg";
-import { router } from "expo-router";
+import { Href, router } from "expo-router";
 import {
   StyleSheet,
   Text,
@@ -12,9 +12,14 @@ import {
 type TypeHeader = {
   display?: boolean;
   bg?: string;
+  path?: Href;
 };
 
-export default function Header({ display = true, bg = "#F3F3F3" }: TypeHeader) {
+export default function Header({
+  display = true,
+  bg = "#F3F3F3",
+  path = "/",
+}: TypeHeader) {
   return (
     <View
       className="flex-row justify-between items-center"
@@ -23,7 +28,7 @@ export default function Header({ display = true, bg = "#F3F3F3" }: TypeHeader) {
       <TouchableOpacity
         hitSlop={20}
         activeOpacity={0.7}
-        onPress={() => router.back()}
+        onPress={() => router.push(path)}
       >
         <View>
           <Arrow width={11} height={18} />

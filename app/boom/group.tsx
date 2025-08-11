@@ -14,7 +14,7 @@ export default function BoomGroup() {
   return (
     <SafeAreaView edges={["top"]} className="flex-1">
       <View className="flex-1 px-[20px]">
-        <Header />
+        <Header path={"/boom"} />
 
         {/**Основной блок со всеми элементами*/}
         <View

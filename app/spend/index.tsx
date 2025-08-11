@@ -48,27 +48,26 @@ export default function Spend() {
             />
 
             <SpendingList
-              source={require("@assets/images/cofix.png")}
-              name="Cofix"
-              category="Рестораны"
-              sum="–260,00 ₽"
-              cashback="+ 14 ₽"
+              source={require("@assets/images/urent.png")}
+              name="МТС Юрент"
+              category="Развлечения"
+              sum="–479,00 ₽"
+              cashback="+ 26 ₽"
             />
 
             <SpendingList
-              source={require("@assets/images/cofix.png")}
-              name="Cofix"
-              category="Рестораны"
-              sum="–260,00 ₽"
+              source={require("@assets/images/transfer.png")}
+              name="Илья П."
+              category="Другое"
+              sum="+1000,00 ₽"
               isTransfer={true}
             />
 
             <SpendingList
-              source={require("@assets/images/cofix.png")}
-              name="Cofix"
-              category="Рестораны"
-              sum="–260,00 ₽"
-              cashback="+ 14 ₽"
+              source={require("@assets/images/perek.png")}
+              name="Перекресток"
+              category="Супермаркеты"
+              sum="–891,00 ₽"
             />
           </View>
         </View>

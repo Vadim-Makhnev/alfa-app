@@ -59,7 +59,12 @@ export default function CashbackCard({
         >
           <Sign width={15} height={15} />
         </View>
-        <Svg style={{ width: 23, height: 23 }}>
+        <Svg
+          style={{
+            width: 23,
+            height: 23,
+          }}
+        >
           <Circle
             cx={11.5}
             cy={11.5}

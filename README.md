@@ -1,50 +1,100 @@
-# Welcome to your Expo app 👋
+# 🚀 Запуск Expo-приложения через Docker
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Этот проект запускается в Docker-контейнере с помощью `npm start`.  
+Подходит для разработки и тестирования без установки зависимостей на локальную машину.
 
-## Get started
+---
 
-1. Install dependencies
+## 🐳 Требования
 
-   ```bash
-   npm install
-   ```
+Перед началом убедитесь, что установлено:
 
-2. Start the app
+- [Docker](https://www.docker.com/get-started) (Desktop или CLI)
+- Git (опционально, для клонирования)
 
-   ```bash
-   npx expo start
-   ```
+> 💡 Поддерживается на: **Windows, macOS, Linux**
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📦 Установка Docker
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Windows / macOS
 
-## Get a fresh project
+1. Скачайте и установите **Docker Desktop**:  
+   👉 [https://www.docker.com/get-started](https://www.docker.com/get-started)
+2. Запустите Docker Desktop и дождитесь, пока иконка станет зелёной.
 
-When you're ready, run:
+### Linux (Ubuntu/Debian)
 
 ```bash
-npm run reset-project
+# Установите Docker
+sudo apt update
+sudo apt install -y docker.io docker-compose
+
+# Добавьте пользователя в группу docker
+sudo usermod -aG docker $USER
+
+# Перезагрузитесь или выполните:
+newgrp docker
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Как развернуть?
 
-## Learn more
+```bash
+git clone https://github.com/Vadim-Makhnev/alfa-app
+cd alfa-app
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+docker build -t myapp .
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+docker run -p 8081:8081 myapp
+```
 
-## Join the community
+### 📱 Рекомендация: настройка эмуляции в браузере
 
-Join our community of developers creating universal apps.
+Для точного тестирования мобильного интерфейса в **Chrome DevTools** советую использовать следующие параметры, имитирующие современный смартфон с высокой плотностью экрана:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **Разрешение (Resolution)**: `411 x 914` px
+- **Device Pixel Ratio (DPR)**: `3`
+- **Устройство**: _Google Pixel 5 / Samsung Galaxy S20 (похожие габариты)_
+
+#### Как настроить:
+
+1. Откройте **Chrome DevTools** (`F12` или `Ctrl+Shift+I`)
+2. Нажмите на иконку **📱 Device Toolbar** в левом верхнем углу
+3. Выберите **"Edit…"** → **"Add custom device"**
+4. Заполните:
+   - Device name: `Alfa Mobile Preview`
+   - Width: `411`
+   - Height: `914`
+   - Device pixel ratio: `3`
+5. Сохраните и выберите устройство из списка.
+
+### 📱 Как запустить на Android-эмуляторе
+
+Чтобы запустить приложение на виртуальном устройстве, используйте **Android Studio** и встроенный эмулятор.
+
+#### 1. Запустите Android Studio
+
+- Откройте Android Studio
+- Перейдите в **Device Manager** (в меню: `View → Tool Windows → Device Manager`)
+
+#### 2. Создайте или запустите эмулятор
+
+- Рекомендуемое устройство: **Google Pixel 5**
+- Версия Android: **API 30+** (Android 11 или новее)
+- Убедитесь, что **Play Store** включён (если нужно)
+
+#### 3. Запустите эмулятор
+
+- Нажмите "▶️" рядом с устройством
+- Дождитесь полной загрузки (может занять 1–3 минуты)
+
+#### 4. Запустите приложение из терминала
+
+Откройте терминал в корне проекта и выполните:
+
+```bash
+npm run android
+```

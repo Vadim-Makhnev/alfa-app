@@ -11,13 +11,14 @@ import {
 
 type TypeHeader = {
   display?: boolean;
+  bg?: string;
 };
 
-export default function Header({ display = true }: TypeHeader) {
+export default function Header({ display = true, bg = "#F3F3F3" }: TypeHeader) {
   return (
     <View
       className="flex-row justify-between items-center"
-      style={{ backgroundColor: "#F3F3F3", marginBottom: 36 }}
+      style={{ backgroundColor: bg, marginBottom: 36 }}
     >
       <TouchableOpacity
         hitSlop={20}

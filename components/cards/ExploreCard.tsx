@@ -1,0 +1,61 @@
+import { Image, StyleSheet, Text, View } from "react-native";
+
+type TypeExploreCard = {
+  name: string;
+  pngSource: any;
+  width: number;
+  height: number;
+};
+
+export default function ExploreCard({
+  name,
+  pngSource,
+  width,
+  height,
+}: TypeExploreCard) {
+  return (
+    <View
+      style={[
+        {
+          backgroundColor: "white",
+          width: 160,
+          paddingTop: 35,
+          paddingBottom: 40,
+          borderRadius: 28,
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 24,
+        },
+        styles.cardShadow,
+      ]}
+    >
+      <View
+        style={{
+          backgroundColor: "#F0F0F0",
+          borderRadius: 50,
+          width: 85,
+          height: 85,
+          justifyContent: "flex-end",
+          alignItems: "center",
+          overflow: "hidden",
+        }}
+      >
+        <Image
+          source={pngSource}
+          style={{ width: width, height: height }}
+        ></Image>
+      </View>
+      <Text>{name}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  cardShadow: {
+    shadowColor: "#000000",
+    shadowOffset: { width: 4, height: 0 },
+    shadowOpacity: 0.04,
+    shadowRadius: 20,
+    elevation: 5,
+  },
+});

@@ -74,6 +74,18 @@ function RootLayout() {
       />
 
       <Tabs.Screen
+        name="explore/index"
+        options={{
+          headerShown: false,
+          href: null,
+          tabBarStyle: {
+            height: 0,
+            display: "none",
+          },
+        }}
+      />
+
+      <Tabs.Screen
         name="subscriptions/index"
         options={{ headerShown: false, href: null }}
       />

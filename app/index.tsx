@@ -116,13 +116,18 @@ export default function MainScreen() {
           showsHorizontalScrollIndicator={false}
           className="mt-[24px]"
         >
-          <MainAction
-            text1="Исследуй продукты"
-            text2="и открывай новое"
-            pngSource={require("@assets/images/products.png")}
-            width={140}
-            height={90}
-          />
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={() => router.push("/explore")}
+          >
+            <MainAction
+              text1="Исследуй продукты"
+              text2="и открывай новое"
+              pngSource={require("@assets/images/products.png")}
+              width={140}
+              height={90}
+            />
+          </TouchableOpacity>
 
           <TouchableOpacity
             activeOpacity={0.7}

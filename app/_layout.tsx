@@ -1,6 +1,7 @@
 import CartIcon from "@assets/icons/CartIcon.svg";
 import HomeIcon from "@assets/icons/HomeIcon.svg";
 import MapIcon from "@assets/icons/MapIcon.svg";
+import MoneyIcon from "@assets/icons/MoneyIcon.svg";
 import ChatIcon from "@assets/icons/MsgIcon.svg";
 import { useFonts } from "expo-font";
 import { SplashScreen, Tabs } from "expo-router";
@@ -63,6 +64,20 @@ function RootLayout() {
               width={27.5}
               height={28.6}
               fill={focused ? "#EF3124" : "#EFEFF4"}
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="money/index"
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ focused }) => (
+            <MoneyIcon
+              width={35}
+              height={35}
+              fill={focused ? "#EF3124" : "transparent"}
             />
           ),
         }}

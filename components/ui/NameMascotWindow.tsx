@@ -54,6 +54,7 @@ export default function NameMascotWindow({
               как тебе угодно! В рамках приличия, конечно :)
             </Text>
             <TextInput
+              placeholder="Тигрик"
               style={{
                 paddingVertical: 12,
                 backgroundColor: "#EDEDED",
@@ -62,9 +63,8 @@ export default function NameMascotWindow({
                 fontFamily: "StyreneRegular",
                 fontSize: 18,
               }}
-            >
-              Тигрик
-            </TextInput>
+              value="Тигрик"
+            ></TextInput>
           </View>
           <TouchableWithoutFeedback onPress={() => setStep(2)}>
             <View

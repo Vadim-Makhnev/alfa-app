@@ -74,7 +74,9 @@ export default function ModalWindow({
                 borderRadius: 16,
               }}
             >
-              <Text>Погнали!</Text>
+              <Text style={{ fontFamily: "StyreneMedium", fontSize: 18 }}>
+                Погнали!
+              </Text>
             </View>
           </TouchableWithoutFeedback>
         </View>

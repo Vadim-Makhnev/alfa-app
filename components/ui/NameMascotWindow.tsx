@@ -1,14 +1,14 @@
-import { router } from "expo-router";
 import {
   Image,
   Modal,
   StyleSheet,
   Text,
+  TextInput,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
 
-export default function ModalWindow({
+export default function NameMascotWindow({
   visible,
   setStep,
 }: {
@@ -44,37 +44,48 @@ export default function ModalWindow({
               source={require("@assets/images/tigerbig.png")}
               style={{ width: 120, height: 120 }}
             ></Image>
-            <Text style={{ fontFamily: "StyreneMedium", fontSize: 22 }}>
-              Тигрик
-            </Text>
+            <Text style={{ fontFamily: "StyreneMedium", fontSize: 22 }}>?</Text>
           </View>
 
           <View className="gap-[15px] wrap">
-            <Text style={[styles.small, { color: "black", fontSize: 15 }]}>
-              Привет!
+            <Text style={[styles.small, { color: "black", fontSize: 18 }]}>
+              Пррривет! *радостное рычание* Рад с тобой познакомиться! Меня
+              зовут... пока что меня никак не зовут, но ты можешь назвать меня
+              как тебе угодно! В рамках приличия, конечно :)
             </Text>
-            <Text
-              style={[styles.small, { color: "black", fontSize: 15 }]}
-            >{`Вижу, что твои расходы увеличиваются каждый месяц(`}</Text>
-            <Text style={[styles.small, { color: "black", fontSize: 15 }]}>
-              Давай посмотрим как мы можем их оптимизировать?
-            </Text>
+            <TextInput
+              style={{
+                paddingVertical: 12,
+                backgroundColor: "#EDEDED",
+                borderRadius: 22,
+                paddingLeft: 21,
+                fontFamily: "StyreneRegular",
+                fontSize: 18,
+              }}
+            >
+              Тигрик
+            </TextInput>
           </View>
-
-          <TouchableWithoutFeedback
-            onPress={() => (setStep(3), router.push("/spend"))}
-          >
+          <TouchableWithoutFeedback onPress={() => setStep(2)}>
             <View
               style={{
                 alignSelf: "center",
-                backgroundColor: "#8FFF00",
-                paddingVertical: 7,
+                backgroundColor: "#EF3124",
+                paddingVertical: 10,
                 paddingHorizontal: 20,
-                marginTop: 35,
-                borderRadius: 16,
+                marginTop: 42,
+                borderRadius: 22,
               }}
             >
-              <Text>Погнали!</Text>
+              <Text
+                style={{
+                  fontFamily: "StyreneMedium",
+                  fontSize: 20,
+                  color: "white",
+                }}
+              >
+                Готово!
+              </Text>
             </View>
           </TouchableWithoutFeedback>
         </View>

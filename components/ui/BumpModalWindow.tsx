@@ -1,26 +1,31 @@
+import { router } from "expo-router";
 import {
   Image,
   Modal,
   StyleSheet,
   Text,
-  TextInput,
+  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
 
-export default function NameMascotWindow({
+export default function BumpModal({
   visible,
-  setStep,
+  setVisible,
 }: {
   visible: boolean;
-  setStep: (step: number) => void;
+  setVisible: (visible: boolean) => void;
 }) {
   return (
     <Modal animationType="fade" transparent={true} visible={visible}>
       {/* Затемнённый фон */}
       <View style={styles.overlay}>
         {/* Весь остальной код остаётся без изменений */}
-
+        <TouchableOpacity
+          style={StyleSheet.absoluteFillObject}
+          onPress={() => setVisible(false)}
+          activeOpacity={1}
+        />
         <View
           style={[
             styles.cardShadow,
@@ -44,47 +49,41 @@ export default function NameMascotWindow({
               source={require("@assets/images/tigerbig.png")}
               style={{ width: 120, height: 120 }}
             ></Image>
-            <Text style={{ fontFamily: "StyreneMedium", fontSize: 22 }}>?</Text>
+            <Text style={{ fontFamily: "StyreneMedium", fontSize: 22 }}>
+              Тигрик
+            </Text>
           </View>
 
           <View className="gap-[15px] wrap">
             <Text style={[styles.small, { color: "black", fontSize: 15 }]}>
-              Пррривет! *радостное рычание* Рад с тобой познакомиться! Меня
-              зовут... пока что меня никак не зовут, но ты можешь назвать меня
-              как тебе угодно! В рамках приличия, конечно :)
+              woow, похоже ты БАМнулся с новым человеком!
             </Text>
-            <TextInput
-              placeholder="Тигрик"
-              style={{
-                paddingVertical: 12,
-                backgroundColor: "#EDEDED",
-                borderRadius: 22,
-                paddingLeft: 21,
-                fontFamily: "StyreneRegular",
-                fontSize: 18,
-              }}
-              value="Тигрик"
-            ></TextInput>
+            <Text
+              style={[styles.small, { color: "black", fontSize: 15 }]}
+            >{`хочешь добавить его в друзья? Ты сможешь поделиться своей электронной визиткой и наладить новый контакт!`}</Text>
           </View>
-          <TouchableWithoutFeedback onPress={() => setStep(2)}>
+
+          <TouchableWithoutFeedback
+            onPress={() => (router.push("/business"), setVisible(false))}
+          >
             <View
               style={{
                 alignSelf: "center",
                 backgroundColor: "#EF3124",
                 paddingVertical: 10,
                 paddingHorizontal: 20,
-                marginTop: 42,
-                borderRadius: 22,
+                marginTop: 35,
+                borderRadius: 16,
               }}
             >
               <Text
                 style={{
                   fontFamily: "StyreneMedium",
-                  fontSize: 20,
+                  fontSize: 18,
                   color: "white",
                 }}
               >
-                Готово!
+                обменяться контактами
               </Text>
             </View>
           </TouchableWithoutFeedback>

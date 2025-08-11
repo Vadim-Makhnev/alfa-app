@@ -26,6 +26,10 @@ export default function MainScreen() {
   const [step, setStep] = useState(0);
   return (
     <SafeAreaView edges={["top"]} className="flex-1 bg-bg">
+      <MascotWindow visible={step === 0} setStep={setStep} />
+      <NameMascotWindow visible={step === 1} setStep={setStep} />
+      <ModalWindow visible={step === 2} setStep={setStep} />
+
       <ScrollView className="px-[20px] flex-1 ">
         <HeaderWithLogo />
 
@@ -163,9 +167,6 @@ export default function MainScreen() {
           <Bumpfest />
         </View>
       </ScrollView>
-      <MascotWindow visible={step === 0} setStep={setStep} />
-      <NameMascotWindow visible={step === 1} setStep={setStep} />
-      <ModalWindow visible={step === 2} setStep={setStep} />
     </SafeAreaView>
   );
 }

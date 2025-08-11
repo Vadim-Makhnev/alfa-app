@@ -13,10 +13,12 @@ import Bump from "@assets/images/bumps.svg";
 import Star from "@assets/images/star.svg";
 import TBump from "@assets/images/textbump.svg";
 
+import BumpModal from "@/components/ui/BumpModalWindow";
 import { useEffect, useMemo, useState } from "react";
 
 export default function MapScreen() {
   const [isActive, setActive] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const opacity = useMemo(() => new Animated.Value(0), []);
   const scale = useMemo(() => new Animated.Value(1), []);
@@ -122,7 +124,10 @@ export default function MapScreen() {
             useNativeDriver: true,
           }),
         ]).start(() => {
-          setActive(false); // сбрасываем состояние
+          setActive(false);
+          setTimeout(() => {
+            setIsVisible(true);
+          }, 500); // сбрасываем состояние
         });
       }, 3000);
 
@@ -272,6 +277,8 @@ export default function MapScreen() {
           </Animated.View>
         </Animated.View>
       </View>
+
+      <BumpModal visible={isVisible} setVisible={setIsVisible} />
     </SafeAreaView>
   );
 }

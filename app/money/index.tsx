@@ -1,4 +1,4 @@
-import Header from "@/components/ui/Header";
+import HeaderWithLogo from "@/components/ui/HeaderWithLogo";
 import { Image, Text, View } from "react-native";
 
 export default function MoneyScreen() {
@@ -8,7 +8,7 @@ export default function MoneyScreen() {
         className="bg-white w-full h-[111px] pt-[56px] pl-[35px] pb-[15px] pr-[30px] mb-[24px]"
         style={{ borderBottomLeftRadius: 30, borderBottomRightRadius: 30 }}
       >
-        <Header bg="#FFFFFF" />
+        <HeaderWithLogo />
       </View>
       <View className="flex-1 justify-center items-center gap-[27px] px-[20px]">
         <View style={{ marginLeft: 40 }}>

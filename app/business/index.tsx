@@ -1,6 +1,7 @@
 import SocialCard from "@/components/cards/Socials";
 import Profile from "@assets/images/profile.svg";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { router } from "expo-router";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Svg, { Circle } from "react-native-svg";
 
 export default function BusinessCrad() {
@@ -126,19 +127,25 @@ export default function BusinessCrad() {
             />
           </View>
         </View>
-        <View
-          style={{
-            backgroundColor: "white",
-            justifyContent: "center",
-            alignItems: "center",
-            paddingVertical: 22,
-            width: "100%",
-            borderRadius: 16,
-            marginTop: 20,
-          }}
+        <TouchableOpacity
+          style={{ width: "100%" }}
+          activeOpacity={0.7}
+          onPress={() => router.push("/map")}
         >
-          <Text style={styles.middle}>Пропустить</Text>
-        </View>
+          <View
+            style={{
+              backgroundColor: "white",
+              justifyContent: "center",
+              alignItems: "center",
+              paddingVertical: 22,
+              width: "100%",
+              borderRadius: 16,
+              marginTop: 20,
+            }}
+          >
+            <Text style={styles.middle}>Пропустить</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

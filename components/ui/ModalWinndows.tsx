@@ -4,6 +4,7 @@ import {
   Modal,
   StyleSheet,
   Text,
+  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
@@ -20,7 +21,11 @@ export default function ModalWindow({
       {/* Затемнённый фон */}
       <View style={styles.overlay}>
         {/* Весь остальной код остаётся без изменений */}
-
+        <TouchableOpacity
+          style={StyleSheet.absoluteFillObject}
+          onPress={() => setStep(3)}
+          activeOpacity={1}
+        />
         <View
           style={[
             styles.cardShadow,

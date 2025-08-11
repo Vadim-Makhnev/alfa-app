@@ -1,7 +1,14 @@
 import BoomCard from "@/components/cards/BoomCard";
 import BoomComponent from "@/components/ui/BoomComponent";
 import HeaderWithLogo from "@/components/ui/HeaderWithLogo";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Circle } from "react-native-svg";
 
@@ -11,6 +18,7 @@ import Wave3 from "@assets/images/wave3.svg";
 import Wave4 from "@assets/images/wave4.svg";
 import Wave5 from "@assets/images/wave5.svg";
 import Wave6 from "@assets/images/wave6.svg";
+import { router } from "expo-router";
 
 export default function BoomScreen() {
   return (
@@ -54,31 +62,31 @@ export default function BoomScreen() {
             />
 
             <BoomCard
-              pngSource={require("@assets/images/cofix.png")}
-              name="Cofix"
+              pngSource={require("@assets/images/french.png")}
+              name="French Bakery"
               category="Рестораны"
-              percentage="31%"
+              percentage="23%"
             />
 
             <BoomCard
-              pngSource={require("@assets/images/cofix.png")}
-              name="Cofix"
-              category="Рестораны"
-              percentage="31%"
+              pngSource={require("@assets/images/whoosh.png")}
+              name="Whoosh"
+              category="Развлечения"
+              percentage="19%"
             />
 
             <BoomCard
-              pngSource={require("@assets/images/cofix.png")}
-              name="Cofix"
-              category="Рестораны"
-              percentage="31%"
+              pngSource={require("@assets/images/goldapple.png")}
+              name="Золотое яблоко"
+              category="Красота"
+              percentage="11%"
             />
 
             <BoomCard
-              pngSource={require("@assets/images/cofix.png")}
-              name="Cofix"
-              category="Рестораны"
-              percentage="31%"
+              pngSource={require("@assets/images/other.png")}
+              name="Другое"
+              category="прочие мелкие категории"
+              percentage="16%"
             />
           </View>
         </View>
@@ -204,119 +212,126 @@ export default function BoomScreen() {
 
             {/**Блок 2 */}
 
-            <View className="items-center">
-              <View
-                style={{
-                  position: "relative",
-                  borderRadius: 61.5,
-                  overflow: "hidden",
-                }}
-              >
-                <Wave4
-                  style={{
-                    position: "absolute",
-                    bottom: 0,
-                    zIndex: 3,
-                  }}
-                />
-                <Wave5
-                  style={{
-                    position: "absolute",
-                    bottom: 15,
-                    zIndex: 2,
-                  }}
-                />
-                <Wave6
-                  style={{
-                    position: "absolute",
-                    bottom: 15,
-                    zIndex: 1,
-                  }}
-                />
-
-                <Svg width={123} height={123}>
-                  <Circle
-                    r={61.5}
-                    cx={61.5}
-                    cy={61.5}
-                    fill={"#FFF0EF"}
-                  ></Circle>
-                </Svg>
-
+            <TouchableOpacity
+              activeOpacity={0.7}
+              onPress={() => router.push("/boom/group")}
+            >
+              <View className="items-center">
                 <View
                   style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: 123,
-                    height: 123,
-                    flexDirection: "row",
-                    flexWrap: "wrap",
-                    alignItems: "center",
-                    justifyContent: "center",
-
-                    rowGap: 2,
-                    columnGap: 6,
-                    paddingVertical: 25,
-                    paddingLeft: 5,
-                    zIndex: 4,
+                    position: "relative",
+                    borderRadius: 61.5,
+                    overflow: "hidden",
                   }}
                 >
-                  <Image
-                    source={require("@assets/images/ilya.png")}
+                  <Wave4
                     style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 18,
-                    }}
-                  />
-                  <Image
-                    source={require("@assets/images/nastya.png")}
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 18,
-                    }}
-                  />
-
-                  <Image
-                    source={require("@assets/images/olya.png")}
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 18,
-                    }}
-                  />
-
-                  <Image
-                    source={require("@assets/images/vadim.png")}
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 18,
-                    }}
-                  />
-                  {/* Третья фотка — можно сделать "перенос" */}
-                  <Image
-                    source={require("@assets/images/kolya.png")}
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 18,
                       position: "absolute",
-                      top: 41,
-                      right: 42,
+                      bottom: 0,
+                      zIndex: 3,
                     }}
                   />
+                  <Wave5
+                    style={{
+                      position: "absolute",
+                      bottom: 15,
+                      zIndex: 2,
+                    }}
+                  />
+                  <Wave6
+                    style={{
+                      position: "absolute",
+                      bottom: 15,
+                      zIndex: 1,
+                    }}
+                  />
+
+                  <Svg width={123} height={123}>
+                    <Circle
+                      r={61.5}
+                      cx={61.5}
+                      cy={61.5}
+                      fill={"#FFF0EF"}
+                    ></Circle>
+                  </Svg>
+
+                  <View
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: 123,
+                      height: 123,
+                      flexDirection: "row",
+                      flexWrap: "wrap",
+                      alignItems: "center",
+                      justifyContent: "center",
+
+                      rowGap: 2,
+                      columnGap: 6,
+                      paddingVertical: 25,
+                      paddingLeft: 5,
+                      zIndex: 4,
+                    }}
+                  >
+                    <Image
+                      source={require("@assets/images/ilya.png")}
+                      style={{
+                        width: 36,
+                        height: 36,
+                        borderRadius: 18,
+                      }}
+                    />
+                    <Image
+                      source={require("@assets/images/nastya.png")}
+                      style={{
+                        width: 36,
+                        height: 36,
+                        borderRadius: 18,
+                      }}
+                    />
+
+                    <Image
+                      source={require("@assets/images/olya.png")}
+                      style={{
+                        width: 36,
+                        height: 36,
+                        borderRadius: 18,
+                      }}
+                    />
+
+                    <Image
+                      source={require("@assets/images/vadim.png")}
+                      style={{
+                        width: 36,
+                        height: 36,
+                        borderRadius: 18,
+                      }}
+                    />
+                    {/* Третья фотка — можно сделать "перенос" */}
+                    <Image
+                      source={require("@assets/images/kolya.png")}
+                      style={{
+                        width: 36,
+                        height: 36,
+                        borderRadius: 18,
+                        position: "absolute",
+                        top: 41,
+                        right: 42,
+                      }}
+                    />
+                  </View>
                 </View>
+                <Text
+                  style={[styles.textreg, { color: "balck", fontSize: 15 }]}
+                >
+                  Гринчи
+                </Text>
+                <Text style={[styles.textreg, { color: "#AAAAAA" }]}>
+                  5 участников
+                </Text>
               </View>
-              <Text style={[styles.textreg, { color: "balck", fontSize: 15 }]}>
-                Гринчи
-              </Text>
-              <Text style={[styles.textreg, { color: "#AAAAAA" }]}>
-                5 участников
-              </Text>
-            </View>
+            </TouchableOpacity>
 
             {/**Блок 2 */}
           </View>

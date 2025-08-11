@@ -20,50 +20,74 @@ export default function CashbackScreen() {
               pngSource={require("@assets/images/star.png")}
               percentage="1%"
               text="За все покупки"
+              width={35}
+              height={35}
+              fill="#EF3124"
             />
 
             <CashbackCard
-              pngSource={require("@assets/images/star.png")}
-              percentage="1%"
-              text="За все покупки"
+              pngSource={require("@assets/images/burger.png")}
+              percentage="7%"
+              text="Фастфуд"
+              bg="#01E7E5"
+              width={28}
+              height={28}
+              fill="#EF3124"
             />
 
             <CashbackCard
-              pngSource={require("@assets/images/star.png")}
-              percentage="1%"
-              text="За все покупки"
+              pngSource={require("@assets/images/beauty.png")}
+              percentage="2%"
+              text="Красота"
+              bg="#B7B0FD"
+              width={35}
+              height={35}
+              fill="#EF3124"
             />
 
             <CashbackCard
-              pngSource={require("@assets/images/star.png")}
-              percentage="1%"
-              text="За все покупки"
-              fill="red"
+              pngSource={require("@assets/images/train.png")}
+              percentage="4%"
+              text="Ж/д билеты"
+              bg="#F9B9AD"
+              width={35}
+              height={35}
             />
 
             <CashbackCard
-              pngSource={require("@assets/images/star.png")}
-              percentage="1%"
-              text="За все покупки"
+              pngSource={require("@assets/images/drug.png")}
+              percentage="5%"
+              text="Аптеки"
+              bg="#DCD0EE"
+              width={30}
+              height={30}
             />
 
             <CashbackCard
-              pngSource={require("@assets/images/star.png")}
-              percentage="1%"
-              text="За все покупки"
+              pngSource={require("@assets/images/bone.png")}
+              percentage="5%"
+              text="Зоомагазины"
+              width={35}
+              height={35}
+              bg="#FF8B83"
             />
 
             <CashbackCard
-              pngSource={require("@assets/images/star.png")}
-              percentage="1%"
-              text="За все покупки"
+              pngSource={require("@assets/images/sim.png")}
+              percentage="100%"
+              text="Альфа-Мобайл"
+              width={35}
+              height={35}
+              fill="#EF3124"
             />
 
             <CashbackCard
-              pngSource={require("@assets/images/star.png")}
+              pngSource={require("@assets/images/restaurants.png")}
               percentage="1%"
               text="За все покупки"
-              fill="red"
+              fill="#EF3124"
+              width={35}
+              height={35}
             />
           </View>
 
@@ -77,28 +101,28 @@ export default function CashbackScreen() {
 
           <View className="gap-[16px]">
             <CashbackCard
-              pngSource={require("@assets/images/star.png")}
-              percentage="1%"
-              text="За все покупки"
+              pngSource={require("@assets/images/cofix.png")}
+              percentage="10%"
+              text="Cofix"
+              width={50}
+              height={50}
             />
 
             <CashbackCard
-              pngSource={require("@assets/images/star.png")}
-              percentage="1%"
-              text="За все покупки"
+              pngSource={require("@assets/images/french.png")}
+              percentage="10%"
+              text="French Bakery"
+              width={50}
+              height={50}
+              fill="#EF3124"
             />
 
             <CashbackCard
-              pngSource={require("@assets/images/star.png")}
-              percentage="1%"
-              text="За все покупки"
-            />
-
-            <CashbackCard
-              pngSource={require("@assets/images/star.png")}
-              percentage="1%"
-              text="За все покупки"
-              fill="red"
+              pngSource={require("@assets/images/whoosh.png")}
+              percentage="10%"
+              text="Whoosh"
+              width={50}
+              height={50}
             />
 
             <View className="gap-[5px]">

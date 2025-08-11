@@ -7,6 +7,9 @@ type TypeCashbackCard = {
   percentage: string;
   text: string;
   fill?: string;
+  width: number;
+  height: number;
+  bg?: string;
 };
 
 export default function CashbackCard({
@@ -14,12 +17,15 @@ export default function CashbackCard({
   percentage,
   text,
   fill,
+  width,
+  height,
+  bg = "#91DB6A",
 }: TypeCashbackCard) {
   return (
     <View className="flex-row items-center justify-between">
       <View
         style={{
-          backgroundColor: "#91DB6A",
+          backgroundColor: bg,
           width: 50,
           height: 50,
           borderRadius: 50,
@@ -31,13 +37,12 @@ export default function CashbackCard({
         <Image
           source={pngSource}
           style={{
-            width: 35,
-            height: 35,
-            borderRadius: 50,
+            width: width,
+            height: height,
           }}
         ></Image>
       </View>
-      <View className="flex-row gap-[3px]">
+      <View className="flex-row gap-[3px] w-[50%]">
         <Text style={styles.small}>{percentage}</Text>
         <Text style={styles.small}>{text}</Text>
       </View>

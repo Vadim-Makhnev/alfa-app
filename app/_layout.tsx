@@ -5,26 +5,47 @@ import MoneyIcon from "@assets/icons/MoneyIcon.svg";
 import ChatIcon from "@assets/icons/MsgIcon.svg";
 import { useFonts } from "expo-font";
 import { SplashScreen, Tabs } from "expo-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./globals.css";
 
 SplashScreen.preventAutoHideAsync();
 
 function RootLayout() {
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, error] = useFonts({
     StyreneBold: require("../assets/fonts/StyreneAWeb-Bold.ttf"),
     StyreneMedium: require("../assets/fonts/StyreneAWeb-Medium.ttf"),
     StyreneRegular: require("../assets/fonts/StyreneAWeb-Regular.ttf"),
     StyreneItalic: require("../assets/fonts/StyreneAWeb-Italic.ttf"),
   });
 
-  useEffect(() => {
-    if (fontsLoaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
+  const [appIsReady, setAppIsReady] = useState(false);
 
-  if (!fontsLoaded) {
+  useEffect(() => {
+    if (fontsLoaded || error) {
+      setAppIsReady(true);
+    }
+  }, [fontsLoaded, error]);
+
+  useEffect(() => {
+    if (appIsReady) {
+      const hideSplash = async () => {
+        await SplashScreen.hideAsync();
+      };
+      hideSplash();
+    }
+  }, [appIsReady]);
+
+  useEffect(() => {
+    const timeout = setTimeout(async () => {
+      console.log("Forcing SplashScreen to hide after 5s");
+      await SplashScreen.hideAsync();
+      setAppIsReady(true);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (!appIsReady) {
     return null;
   }
 
